@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int n, a, b, c, d;
+        cin >> n >> a >> b >> c >> d;
+        int mx = 0;
+        for (int i = 0; i <= n;i++)
+        {
+            mx = max(mx, a * i + b * (n - i) + c * i * (n - i));
+            mx = max(mx, a * i + b * (n - i) + d * i * (n - i));
+        }
+        cout << mx << endl;
+    }
+    return 0;
+}
