@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+      
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+        int l = 0;
+        int r=0;
+        bool x = true;
+        for (int i = 0; i < s.size();i++)
+        {
+            if (s[i] == 'B' && x)
+            {
+                l = i;
+                x = false;
+            }
+            if(s[i]=='B')
+            {
+                r = i;
+            }
+        }
+        cout << r - l + 1<< endl; 
+    }
+    return 0;
+}
