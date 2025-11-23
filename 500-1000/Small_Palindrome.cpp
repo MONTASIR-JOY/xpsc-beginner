@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+    while(t--)
+    {
+        int a,b;
+        cin>>a>>b;
+        int cnt = a;
+        vector<int> v(a + b);
+        int n = a + b;
+        for (int i = 0; i < a + b;i++)
+        {
+            if(cnt>0)
+            {
+                v[i] = 1;
+                v[n - i-1] = 1;
+            }
+            cnt-=2;
+        }
+        for (int i = 0; i < n;i++)
+        {
+            if(v[i]==1)
+            {
+                cout << 1;
+            }
+            else{
+                cout << 2;
+            }
+        }
+            cout << endl;
+    }
+    return 0;
+}
